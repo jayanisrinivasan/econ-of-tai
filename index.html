@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Economics of Transformative AI — a 36-hour research sprint</title>
+<meta name="description" content="A 36-hour online research sprint on the economics of transformative AI. Register without a team; we match you. 22–23 August 2026.">
+<meta property="og:title" content="Economics of Transformative AI">
+<meta property="og:description" content="Three days. One concrete thing. Register without a team — we match you.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1F17;
+    --green:#1B4D3A;
+    --green-deep:#0C2B20;
+    --sprout:#8FCFAC;
+    --paper:#FFFFFF;
+    --wash:#F5F8F5;
+    --line:#DFE7E1;
+    --muted:#5B6C63;
+    --display:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+    --sans:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --wrap:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--sprout);outline-offset:3px}
+
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+
+  /* hero */
+  .hero{background:var(--green);color:#EAF3EE}
+  .hero .wrap{padding-top:72px;padding-bottom:0}
+  .hero .eyebrow{color:var(--sprout)}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6.2vw,74px);line-height:1.03;letter-spacing:-.035em;margin:0 0 24px;max-width:15ch}
+  .deck{font-size:clamp(18px,2vw,21px);line-height:1.55;max-width:56ch;color:#CFE4D8;margin:0 0 36px}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:#EAF3EE;color:var(--green-deep);font-family:var(--sans);font-weight:500;font-size:16px;text-decoration:none;padding:15px 30px;border-radius:2px;transition:transform .15s ease,background .15s ease}
+  .cta:hover{background:#fff;transform:translateY(-1px)}
+  .cta.dark{background:var(--green);color:#EAF3EE}
+  .cta.dark:hover{background:var(--green-deep)}
+  .ctarow{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:64px}
+  .ctanote{font-size:15px;color:#A9C9B8}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.16)}
+  .fact{padding:24px 0 34px;border-right:1px solid rgba(255,255,255,.16)}
+  .fact:last-child{border-right:0}
+  .fact dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sprout);margin-bottom:8px}
+  .fact dd{margin:0;font-size:19px;font-weight:500}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;gap:28px;align-items:center;height:54px;overflow-x:auto}
+  nav a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+  nav a:hover{color:var(--green)}
+  nav .nav-cta{margin-left:auto;color:var(--green);font-weight:500}
+
+  section{padding:84px 0;border-bottom:1px solid var(--line)}
+  section h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.15;letter-spacing:-.028em;margin:0 0 20px;max-width:22ch}
+  .lede{font-size:19px;color:var(--muted);max-width:62ch;margin:0 0 44px}
+
+  /* match */
+  .split{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:start}
+  .match p{max-width:52ch}
+  .points{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .points li{padding:18px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+  .points span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;min-width:22px}
+
+  /* tracks */
+  .track{display:grid;grid-template-columns:64px 1fr;gap:0 28px;padding:38px 0;border-top:1px solid var(--line)}
+  .track:last-of-type{border-bottom:1px solid var(--line)}
+  .track .num{font-family:var(--mono);font-size:13px;color:var(--sprout);padding-top:6px}
+  .track h3{font-family:var(--display);font-weight:600;font-size:24px;line-height:1.25;letter-spacing:-.02em;margin:0 0 10px}
+  .track .frame{color:var(--muted);margin:0 0 22px;max-width:60ch}
+  .ideas{display:grid;grid-template-columns:1fr 1fr;gap:8px 32px;list-style:none;margin:0 0 20px;padding:0}
+  .ideas li{font-size:15.5px;line-height:1.5;padding-left:18px;position:relative}
+  .ideas li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:1px;background:var(--sprout)}
+  .skills{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);margin:0}
+
+  /* schedule */
+  .sched{border-top:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .row .when{font-family:var(--mono);font-size:13px;color:var(--green);line-height:1.5}
+  .row h4{margin:0 0 5px;font-size:18px;font-weight:600}
+  .row p{margin:0;color:var(--muted);font-size:16px;max-width:58ch}
+  .tznote{margin-top:28px;font-size:16px;color:var(--muted);max-width:60ch}
+
+  /* judging */
+  .crit{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line)}
+  .crit>div{background:var(--paper);padding:26px}
+  .crit .w{font-family:var(--mono);font-size:12px;color:var(--sprout);letter-spacing:.1em;margin-bottom:10px}
+  .crit h4{margin:0 0 8px;font-size:18px;font-weight:600}
+  .crit p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.55}
+  .judges{margin-top:34px;padding:22px 26px;background:var(--wash);font-size:16px;color:var(--muted)}
+
+  /* faq */
+  details{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;padding:20px 0;font-size:18px;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:baseline}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--mono);color:var(--sprout);font-size:19px}
+  details[open] summary::after{content:"–"}
+  details p{margin:0 0 20px;color:var(--muted);max-width:66ch}
+  details p:first-of-type{margin-top:-4px}
+
+  /* resources */
+  .res{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px}
+  .res h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .res ul{list-style:none;margin:0;padding:0}
+  .res li{padding:7px 0;font-size:15.5px;line-height:1.5}
+  .res a{color:var(--green);text-underline-offset:3px}
+  .res .note{color:var(--muted);font-size:14.5px}
+
+  /* rules */
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:26px 56px}
+  .rules div{font-size:16px;line-height:1.6}
+  .rules strong{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:6px}
+  .rules p{margin:0;color:var(--muted)}
+
+  /* close */
+  .close{background:var(--green);color:#EAF3EE;border:0;text-align:center;padding:96px 0}
+  .close h2{font-family:var(--display);font-weight:700;font-size:clamp(32px,4.6vw,52px);letter-spacing:-.032em;margin:0 auto 28px;max-width:18ch;line-height:1.1}
+  .close .ctanote{margin-top:20px}
+  footer{padding:34px 0;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media(max-width:860px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    section{padding:60px 0}
+    .hero .wrap{padding-top:52px}
+    .facts{grid-template-columns:1fr 1fr}
+    .fact{border-right:0;border-bottom:1px solid rgba(255,255,255,.16);padding:20px 0}
+    .fact:nth-child(odd){border-right:1px solid rgba(255,255,255,.16);padding-right:20px}
+    .fact:nth-child(even){padding-left:20px}
+    .split,.crit,.res,.rules,.ideas{grid-template-columns:1fr;gap:28px}
+    .ideas{gap:6px}
+    .crit{gap:1px}
+    .track{grid-template-columns:1fr;gap:0}
+    .track .num{padding:0 0 8px}
+    .row{grid-template-columns:1fr;gap:6px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Online · worldwide · 22–23 August 2026</p>
+    <h1>Economics of transformative AI</h1>
+    <p class="deck">Everyone agrees AI will reshape the economy. Almost nobody is doing the concrete work of figuring out how, for whom, and what to do about it. Three days to change that — and one finished thing to show for it.</p>
+    <div class="ctarow">
+      <a class="cta" href="https://try.mangrove.one/alpha">Register</a>
+      <span class="ctanote">No team needed. We match you.</span>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>Format</dt><dd>36-hour sprint</dd></div>
+      <div class="fact"><dt>Teams</dt><dd>Up to 5</dd></div>
+      <div class="fact"><dt>Prizes</dt><dd>$1,750</dd></div>
+      <div class="fact"><dt>Background</dt><dd>None required</dd></div>
+    </dl>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#tracks">Tracks</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#judging">Judging</a>
+    <a href="#faq">FAQ</a>
+    <a href="#resources">Resources</a>
+    <a class="nav-cta" href="https://try.mangrove.one/alpha">Register →</a>
+  </div>
+</nav>
+
+<section class="match">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Teams</p>
+      <h2>You don't need to bring a team</h2>
+      <p>Tell us your track, your background, and when you're actually free. Mangrove builds a team around you, weighted to what your track needs — sometimes that's an economist next to an ML researcher, sometimes four policy people who can move fast on the same question.</p>
+      <p>Matching runs continuously from the moment you register, so most teams are formed and talking days before the sprint opens. You can also register with people you already know, up to five.</p>
+    </div>
+    <ul class="points">
+      <li><span>01</span><div>Matched on your skills, your track, and your availability</div></li>
+      <li><span>02</span><div>Timezone-aware, so you have working hours in common</div></li>
+      <li><span>03</span><div>A private Slack channel the day your team forms</div></li>
+      <li><span>04</span><div>Team not working out? Tell us and we'll move you</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="tracks">
+  <div class="wrap">
+    <p class="eyebrow">Five tracks</p>
+    <h2>Pick one when you register</h2>
+    <p class="lede">Your track shapes who you're matched with and how your work is read. Cross-track projects are welcome — just tell us where yours primarily sits. The examples are starting points, not assignments.</p>
+
+    <article class="track">
+      <div class="num">01</div>
+      <div>
+        <h3>Who gets left behind, and how fast</h3>
+        <p class="frame">Not whether AI displaces workers, but who, where, on what timeline, and whether anyone is measuring it in real time.</p>
+        <ul class="ideas">
+          <li>Displacement models by sector or income bracket</li>
+          <li>Early-warning systems from job-posting data</li>
+          <li>Honest evaluations of retraining or wage subsidies</li>
+          <li>Base rates from past technological transitions</li>
+        </ul>
+        <p class="skills">Labor economics · alternative data · program evaluation</p>
+      </div>
+    </article>
+
+    <article class="track">
+      <div class="num">02</div>
+      <div>
+        <h3>Who controls AI, and what that buys them</h3>
+        <p class="frame">A handful of firms control the most capable systems on earth. Concentration of capability is concentration of power. Name it, measure it, propose a remedy that survives scrutiny.</p>
+        <ul class="ideas">
+          <li>Antitrust analysis of the current AI stack</li>
+          <li>Models of winner-take-all dynamics</li>
+          <li>Stress-tests of breakups or interoperability mandates</li>
+          <li>Comparative study of government responses</li>
+        </ul>
+        <p class="skills">Industrial organization · antitrust · comparative regulation</p>
+      </div>
+    </article>
+
+    <article class="track">
+      <div class="num">03</div>
+      <div>
+        <h3>The Global South is not an afterthought</h3>
+        <p class="frame">The countries most exposed to disruption are barely in the conversation. The global distribution of AI's impact is a choice, not an inevitability. Make the choice visible.</p>
+        <ul class="ideas">
+          <li>Country analysis a policymaker could use</li>
+          <li>Remittance flows under labor displacement</li>
+          <li>Technology diffusion across economic contexts</li>
+          <li>Mechanisms that give developing countries leverage</li>
+        </ul>
+        <p class="skills">Development economics · trade and remittances · country expertise</p>
+      </div>
+    </article>
+
+    <article class="track">
+      <div class="num">04</div>
+      <div>
+        <h3>What levers governments actually have</h3>
+        <p class="frame">Everyone has a proposal. Almost nobody has checked whether it works, under what conditions, at what cost. Pick one and do the honest evaluation.</p>
+        <ul class="ideas">
+          <li>UBI costed with every assumption stated</li>
+          <li>Sovereign AI fund design with real governance</li>
+          <li>Redistribution under rapid productivity growth</li>
+          <li>Compute governance against realistic evasion</li>
+        </ul>
+        <p class="skills">Public finance · mechanism design · simulation</p>
+      </div>
+    </article>
+
+    <article class="track">
+      <div class="num">05</div>
+      <div>
+        <h3>We can't manage what we can't see</h3>
+        <p class="frame">GDP was built for an industrial economy and moves in quarters when policy needs months. Build the instruments that would let anyone watch this happen in real time.</p>
+        <ul class="ideas">
+          <li>Real-time economic indicators</li>
+          <li>Working dashboards on alternative data</li>
+          <li>New ways to measure AI productivity gains</li>
+          <li>Critiques of GDP with concrete replacements</li>
+        </ul>
+        <p class="skills">Measurement · data engineering · dashboards</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="wrap">
+    <p class="eyebrow">Schedule</p>
+    <h2>Two scheduled moments. The rest is your team's own time.</h2>
+    <div class="sched">
+      <div class="row">
+        <div class="when">Wed 19 Aug<br>[time TBD]</div>
+        <div><h4>Info session</h4><p>What the tracks are, what a good submission looks like, and how to scope something you can finish in 36 hours. Come with questions. Recorded and posted the same day.</p></div>
+      </div>
+      <div class="row">
+        <div class="when">Sat 22 Aug<br>12:00 am PT</div>
+        <div><h4>Sprint opens</h4><p>Tracks go live and the clock starts. Most teams are already formed and talking by now.</p></div>
+      </div>
+      <div class="row">
+        <div class="when">Sat 22 Aug<br>[time TBD]</div>
+        <div><h4>Office hours</h4><p>Drop-in, midway through. Bring a scoping problem, a data dead end, or a question about whether your idea is too big.</p></div>
+      </div>
+      <div class="row">
+        <div class="when">Sun 23 Aug<br>12:00 pm PT</div>
+        <div><h4>Submissions close</h4><p>Hard deadline — the form closes automatically. Anything you've hosted needs to stay live through judging.</p></div>
+      </div>
+      <div class="row">
+        <div class="when">Week of 24 Aug</div>
+        <div><h4>Judging</h4><p>Every submission is read by at least two judges, who write feedback as they go.</p></div>
+      </div>
+      <div class="row">
+        <div class="when">approx. 31 Aug</div>
+        <div><h4>Results</h4><p>Winners announced. Every team gets their written feedback, whether they placed or not.</p></div>
+      </div>
+    </div>
+    <p class="tznote">The sprint runs 36 hours, from 12:00 am Saturday to 12:00 pm Sunday, Pacific Time (UTC−7 in August). It spans a full working day in every timezone, and nobody is expected to be awake for all of it. Only the info session and office hours are scheduled, and both are recorded. Teams are matched with timezone overlap in mind, so you'll share working hours with the people you're building with.</p>
+  </div>
+</section>
+
+<section id="judging">
+  <div class="wrap">
+    <p class="eyebrow">Judging</p>
+    <h2>A narrow question answered honestly beats a broad one gestured at</h2>
+    <p class="lede">Every submission is read by at least two judges against the same four criteria. Everyone gets written feedback.</p>
+    <div class="crit">
+      <div><p class="w">25%</p><h4>Question and scope</h4><p>A specific question, narrow enough to actually answer in 36 hours. "How will AI affect work" scores badly. "Did postings for entry-level translation roles fall faster than a matched control after mid-2023" scores well.</p></div>
+      <div><p class="w">30%</p><h4>Rigor and honesty</h4><p>Assumptions on the surface, methods a reader can check, limitations named rather than buried. A model with three stated wrong assumptions beats one with three hidden ones.</p></div>
+      <div><p class="w">25%</p><h4>Usefulness</h4><p>Could someone act on this on Monday? A number, a method, a dataset, a decision rule — something that moves past what's already been said.</p></div>
+      <div><p class="w">20%</p><h4>Communication</h4><p>Can a smart person outside your discipline follow it? Clear charts, defined terms, and a conclusion that says what you found. Judges score clarity, not polish.</p></div>
+    </div>
+    <p class="judges">Prizes: $1,000 first, $500 second, $250 third. Split evenly within a team; a solo winner takes the full amount. Judges announced soon.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2>The things people actually ask</h2>
+
+    <details><summary>Do I need a background in AI or economics?</summary>
+      <p>No. Curiosity and a willingness to narrow a question are the requirements. Several tracks lean more on policy, development, or measurement expertise than on either AI or economics. If you can read a paper in your own field and tell good work from bad, you can contribute here.</p></details>
+
+    <details><summary>Do I need a team?</summary>
+      <p>No — that's rather the point. Register on your own and we build a team around you from your track, your background, and when you're free. You can also register with people you already know, up to five.</p></details>
+
+    <details><summary>Can I submit on my own?</summary>
+      <p>Yes, though we'd rather you didn't. Solo submissions are judged on the same criteria as team ones, with no allowance for having had fewer hands.</p></details>
+
+    <details><summary>How much time does this actually take?</summary>
+      <p>Most people put in 12–20 hours across the 36 hours. You can do something real in less if you scope tightly. You cannot do something real in three.</p></details>
+
+    <details><summary>What exactly am I submitting?</summary>
+      <p>Whatever form fits the work: a written brief, an interactive site, a model, a dataset, a dashboard, a playable simulation, or some combination. Build the thing that makes your point best.</p>
+      <p>Alongside it, every team submits a short write-up — two pages or so — that stands on its own: the question, what you did, what you found, what you're not claiming. This is what judges read first, and it's what makes submissions comparable when one team ships a game and another ships a regression. If your main artifact is already a written brief, that is your write-up.</p>
+      <p>If your artifact can't be opened in a browser — a local app, a notebook needing setup, anything with dependencies — include a three-minute video showing it working. Judges won't debug your environment.</p></details>
+
+    <details><summary>Can I use AI tools?</summary>
+      <p>Yes, for anything: coding, analysis, drafting, literature search. Say so in your submission and be specific about what you used it for. What matters is that you can defend every claim you make — if you can't explain how a number was produced, don't include it.</p></details>
+
+    <details><summary>Can I use work I'd already started?</summary>
+      <p>Yes, with disclosure. State what existed before the sprint opened and what you built during it. Judges score the new contribution.</p></details>
+
+    <details><summary>Who owns what I make?</summary>
+      <p>You do. We may ask to feature winning work publicly, and we'll ask before doing it.</p></details>
+
+    <details><summary>What if my team goes quiet?</summary>
+      <p>Tell us and we'll help — either backfill someone or move you. This happens at every hackathon, and it's much easier to fix on Friday than on Sunday.</p></details>
+
+    <details><summary>What if my analysis fails on Saturday night?</summary>
+      <p>Submit anyway. A well-documented negative result, or an honest account of why a method didn't work, is a real contribution and scores far better than nothing. Have a fallback in mind before you need it.</p></details>
+
+    <details><summary>Is there a cost?</summary>
+      <p>No.</p></details>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <p class="eyebrow">Resources</p>
+    <h2>Nobody should lose Friday night hunting for data</h2>
+    <p class="lede">You don't need any of this to take part. It's here because half of all sprint projects die on "we couldn't get the data." Confirm your source is reachable <em>before</em> you commit to a question — an actual file, downloaded and opened, not "there should be data on this."</p>
+    <div class="res">
+      <div>
+        <h4>General</h4>
+        <ul>
+          <li><a href="https://fred.stlouisfed.org">FRED</a> — most US macro series, with an API</li>
+          <li><a href="https://data.worldbank.org">World Bank Open Data</a> — cross-country indicators</li>
+          <li><a href="https://data-explorer.oecd.org">OECD Data Explorer</a> — productivity and labour detail</li>
+          <li><a href="https://ourworldindata.org">Our World in Data</a> — cleaned and well-sourced</li>
+          <li><a href="https://www.ipums.org">IPUMS</a> — harmonised microdata; registration takes time, start early</li>
+        </ul>
+      </div>
+      <div>
+        <h4>01 — Displacement</h4>
+        <ul>
+          <li><a href="https://www.onetonline.org">O*NET</a> — task and skill data by occupation</li>
+          <li><a href="https://www.bls.gov">BLS</a> — employment, wages, projections</li>
+          <li><a href="https://www.hiringlab.org">Indeed Hiring Lab</a> — job postings, higher frequency than official stats</li>
+          <li class="note">For retraining evidence, DOL's commissioned evaluations of WIOA and Trade Adjustment Assistance are the rigorous source.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>02 — Concentration</h4>
+        <ul>
+          <li><a href="https://www.sec.gov/edgar">SEC EDGAR</a> — filings, equity stakes, segment revenue</li>
+          <li><a href="https://epoch.ai">Epoch AI</a> — compute and training run data</li>
+          <li><a href="https://hai.stanford.edu/ai-index">Stanford AI Index</a> — investment and capability baselines</li>
+          <li class="note">Provider pricing pages and their archived versions — API prices over time are recoverable and nobody has assembled them properly.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>03 — Global South</h4>
+        <ul>
+          <li><a href="https://ilostat.ilo.org">ILOSTAT</a> — employment by occupation for most countries</li>
+          <li><a href="https://www.knomad.org">KNOMAD</a> — bilateral remittance flows</li>
+          <li><a href="https://comtrade.un.org">UN Comtrade</a> — trade in services by category</li>
+          <li class="note">For a country brief, the national labour force survey usually beats any international aggregate.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>04 — Policy levers</h4>
+        <ul>
+          <li><a href="https://www.imf.org">IMF</a> — fiscal data and Article IV country reports</li>
+          <li><a href="https://www.rug.nl/ggdc/productivity/pwt">Penn World Table</a> — long-run productivity and capital stock</li>
+          <li class="note">Read the actual regulatory texts — the EU AI Act and equivalents elsewhere are all published.</li>
+          <li class="note">Existing UBI pilot evaluations give you real effect sizes instead of assumed ones.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>05 — Measurement</h4>
+        <ul>
+          <li><a href="https://www.bea.gov">BEA</a> — national accounts and the methodology docs that explain what GDP misses</li>
+          <li class="note">The national accounts literature on digital and free goods is the right foundation for anything measuring consumer surplus.</li>
+          <li class="note">Found a source we've missed? Post it in the channel so everyone gets it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Rules</p>
+    <h2>Short version</h2>
+    <div class="rules">
+      <div><strong>Eligibility</strong><p>Open to anyone, anywhere, over 18. No affiliation required. Free to enter.</p></div>
+      <div><strong>Teams</strong><p>Up to five people. Solo submissions accepted. Register alone and we'll match you.</p></div>
+      <div><strong>Submissions</strong><p>One entry per team by the Sunday deadline, in any format, plus a short written summary that stands alone. A demo video is required if your artifact can't be opened in a browser. Hosted work must stay live through judging. Late entries are not accepted.</p></div>
+      <div><strong>AI tools</strong><p>Permitted for any part of the work. Disclose usage. You are responsible for every claim you make.</p></div>
+      <div><strong>Prior work</strong><p>Permitted with disclosure. State what existed before the sprint; judges score the new contribution.</p></div>
+      <div><strong>Conduct</strong><p>Be decent to the people you're matched with. Harassment or bad-faith behaviour gets you removed from the event and the platform. Report anything to [contact TBD].</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>Three days. One finished thing.</h2>
+    <a class="cta" href="https://try.mangrove.one/alpha">Register</a>
+    <p class="ctanote">Registration closes Friday 21 August · info session on the 19th</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Economics of transformative AI · 22–23 August 2026</span>
+    <span>Organised by Mangrove · [contact TBD]</span>
+  </footer>
+</div>
+
+</body>
+</html>
